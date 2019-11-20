@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/infracloudio/botkube/pkg/bot"
 	"github.com/infracloudio/botkube/pkg/config"
 	"github.com/infracloudio/botkube/pkg/controller"
@@ -10,7 +9,6 @@ import (
 	"github.com/infracloudio/botkube/pkg/notify"
 	"github.com/infracloudio/botkube/pkg/utils"
 	"github.com/infracloudio/botkube/pkg/metrics"
-	//"/home/user/go/src/github.com/infracloudio/botkube/pg/metrics"
 )
 
 func main() {
@@ -32,10 +30,8 @@ func main() {
 		go mb.Start()
 	}
 
-
 	//Prometheus metrics
 	go metrics.ServeMetrics()
-
 
 	// List notifiers
 	var notifiers []notify.Notifier

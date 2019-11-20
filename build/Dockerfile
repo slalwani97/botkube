@@ -20,7 +20,7 @@ COPY . .
 RUN GOOS=${GOOS_VAL} GOARCH=${GOARCH_VAL} go build -o /go/bin/botkube ./cmd/botkube 
 
 # Install kubectl binary
-RUN apk add --no-cache ca-certificates git curl \
+RUN apk add --no-cache ca-certificates git \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl
 
