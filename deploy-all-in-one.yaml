@@ -193,9 +193,9 @@ data:
     communications:
       # Settings for Slack
       slack:
-        enabled: false
-        channel: 'SLACK_CHANNEL'
-        token: 'SLACK_API_TOKEN'
+        enabled: true
+        channel: 'surabhi-test'
+        token: 'xoxb-551945394612-552980363649-LVEf7IbmRqMKismPHVaPgdjd'
         notiftype: short                            # Change notification type short/long you want to receive. notiftype is optional and Default notification type is short (if not specified)
 
       # Settings for Mattermost
@@ -228,9 +228,9 @@ data:
     # Setting to support multiple clusters
     settings:
       # Cluster name to differentiate incoming messages
-      clustername: not-configured
+      clustername: minikube
       # Set true to enable kubectl commands execution
-      allowkubectl: false
+      allowkubectl: true
       # Set true to enable config watcher
       configwatcher: true
       # Set false to disable upgrade notification
@@ -295,7 +295,7 @@ spec:
       serviceAccountName: botkube-sa
       containers:
         - name: botkube
-          image: "infracloudio/botkube:v0.9.0"
+          image: "infracloudio/botkube:latest"
           imagePullPolicy: Always
           volumeMounts:
             - name: config-volume

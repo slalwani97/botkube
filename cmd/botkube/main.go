@@ -9,6 +9,8 @@ import (
 	log "github.com/infracloudio/botkube/pkg/logging"
 	"github.com/infracloudio/botkube/pkg/notify"
 	"github.com/infracloudio/botkube/pkg/utils"
+	"github.com/infracloudio/botkube/pkg/metrics"
+	//"/home/user/go/src/github.com/infracloudio/botkube/pg/metrics"
 )
 
 func main() {
@@ -29,6 +31,11 @@ func main() {
 		mb := bot.NewMattermostBot()
 		go mb.Start()
 	}
+
+
+	//Prometheus metrics
+	go metrics.ServeMetrics()
+
 
 	// List notifiers
 	var notifiers []notify.Notifier
