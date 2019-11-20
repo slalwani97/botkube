@@ -1,13 +1,11 @@
 package metrics
 
-import(
-	"net/http"
+import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"net/http"
 )
 
-// exposes go metrics
-func ServeMetrics(){
+func ServeMetrics() {
 	http.Handle("/metrics", promhttp.Handler())
 	http.ListenAndServe(":2112", nil)
 }
-

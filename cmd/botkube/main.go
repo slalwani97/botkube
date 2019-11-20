@@ -6,9 +6,9 @@ import (
 	"github.com/infracloudio/botkube/pkg/config"
 	"github.com/infracloudio/botkube/pkg/controller"
 	log "github.com/infracloudio/botkube/pkg/logging"
+	"github.com/infracloudio/botkube/pkg/metrics"
 	"github.com/infracloudio/botkube/pkg/notify"
 	"github.com/infracloudio/botkube/pkg/utils"
-	"github.com/infracloudio/botkube/pkg/metrics"
 )
 
 func main() {
